@@ -1,0 +1,22 @@
+container {
+  height: 300px;
+  width: 900px;
+}
+#red{
+  background-color: red;
+  width: 300px;
+  height: 300px;
+  float: left;
+}
+#yellow{
+  background-color: yellow;
+  width: 300px;
+  height: 300px;
+  float: left;
+}
+#green{
+  background-color: green;
+  width: 300px;
+  height: 300px;
+  float: left;
+}

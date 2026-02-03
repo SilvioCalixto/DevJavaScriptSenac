@@ -1,0 +1,17 @@
+/* MARGIN - ESPAÇAMENTO EXTERNO 
+   PADDING - ESPAÇAMENTO INTERNO */
+
+   #caixa1 {
+    height: 300px;
+    width: 300px;
+    background-color: orange;
+    margin-left: 50%;
+
+   }
+
+   #caixa2 {
+    height: 300px;
+    width: 300px;
+    background-color: purple;
+    margin: 20px 15px;
+   }

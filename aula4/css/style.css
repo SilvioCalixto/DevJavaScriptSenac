@@ -1,0 +1,39 @@
+#container {
+  background-color: wheat;
+  width: 1200px;
+  height: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  width: 1200px;
+  height: 200px;
+  background-color: darkblue;
+}
+
+main {
+  width: 1200px;
+  height:800px;
+  background-color: red;
+}
+
+section {
+  width: 800px;
+  height: 800px;
+  background-color: black;
+  float: left;
+}
+
+/* Caixa lateral */
+aside {
+  width: 400px;
+  height: 800px;
+  background-color:yellowgreen;
+  float: left; /*Para que dois objetos fiquem lado a lado, os dois precisam estar no status FLOAT*/
+}
+
+footer {
+  width: 1200px;
+  height: 100px;
+  background-color:orange;
+}
