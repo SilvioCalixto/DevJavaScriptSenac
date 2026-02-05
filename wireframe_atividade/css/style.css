@@ -1,0 +1,115 @@
+#container {
+  width: 1000px;
+  height: auto;
+  margin: 0 auto;
+}
+header {
+  width: 1000px;
+  height: 150px;
+  background-color: rgb(21, 221, 128);
+
+}
+
+nav {
+  width: 1000px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  margin: 10px 10px;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+li {
+  margin-left:  35px;
+
+  color: white;
+}
+
+#banner {
+  width: 1000px;
+  height: 200px;
+  background-color: aliceblue;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#circle {
+  width: 600px;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.circle {
+  width: 70px;
+  height: 70px;
+  background-color: rgb(184, 183, 183);
+  border-radius: 50%;
+}
+
+.texto {
+
+}
+
+main {
+  width: 1000px;
+  height: auto;
+}
+
+article {
+  width: 500px;
+  height: 350px;
+  background-color: rgb(21, 221, 128);
+  float: left;
+}
+
+.photo {
+  width: 250px;
+  height: 175px;
+  background-color: rgb(21, 221, 128);
+  float: left;
+}
+
+.um {
+  background-color: rgb(184, 183, 183);
+}
+
+.tres {
+  background-color: rgb(120, 231, 180);
+}
+
+.quatro {
+  background-color: rgb(152, 231, 194);
+}
+
+#banner2 {
+  width: 1000px;
+  height: 200px;
+  background-color: aliceblue;
+  clear: left;
+}
+
+footer {
+  width: 1000px;
+  height: 150px;
+  background-color: rgb(21, 221, 128);
+}
+

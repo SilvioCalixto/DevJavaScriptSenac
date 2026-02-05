@@ -5,8 +5,8 @@
     height: 300px;
     width: 300px;
     background-color: orange;
-    margin-left: 50%;
-
+    margin-left: 50%;/*\Esse atributo faz com que o elemento fica com o inicio do lado esquerdo fique no centro da página*/
+   transform: translateX(-50%);/*Esse atributo faz com que o elemento se desloque pela metade do valor, no caso à esquerda.*/
    }
 
    #caixa2 {
