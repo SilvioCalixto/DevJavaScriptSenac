@@ -52,7 +52,7 @@ li {
 }
 
 #circle {
-  width: 600px;
+  width: 650px;
   height: 70px;
   display: flex;
   justify-content: space-around;
@@ -65,8 +65,14 @@ li {
   border-radius: 50%;
 }
 
-.texto {
 
+.texto h1, .texto p {
+  text-align: center;
+}
+
+.texto {
+ width: 500px;
+ height: 120px;
 }
 
 main {
