@@ -82,9 +82,60 @@ footer {
   text-align: center;
   background-color:#e28f2e;
   color: white;
-  padding: 65px 0px;
+  padding: 25px 0px;
+  clear: both;
 }
 
 footer a {
   text-decoration: none;
+}
+
+/* ##### SOBRE ##### */
+
+.fotosobre {
+  width: 20%;
+  height: 160px;
+  float: left;
+}
+
+.textosobre {
+  width: 80%;
+  height: 160px;
+  float: left;
+  margin-top: 10px;
+}
+
+/* ##### CONTATO ##### */
+
+.info {
+  width: 50%;
+  height: auto;
+  float: left;
+  margin: 50px 0;
+}
+
+#formulario {
+  width: 45%;
+  height: auto;
+  float: right;
+  margin: 50px 0;
+}
+
+#formulario label {
+  font-size: 14px;
+}
+
+#formulario div input {
+  width: 100%;
+  height: 25px;
+  background-color: #fae5cc;
+  border: 1px solid #f2c085;
+}
+
+#formulario div textarea {
+  width: 100%;
+  height: 70px;
+  background-color: #fae5cc;
+  border: 1px solid #f2c085;
+  resize: none;
 }
