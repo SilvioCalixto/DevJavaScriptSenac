@@ -74,3 +74,17 @@ article {
   margin-top: 20px;
   margin-bottom: 10px;
 }
+
+/* ###### RODAPÉ ###### */
+
+footer {
+  width: 100%;
+  text-align: center;
+  background-color:#e28f2e;
+  color: white;
+  padding: 65px 0px;
+}
+
+footer a {
+  text-decoration: none;
+}
