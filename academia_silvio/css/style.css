@@ -139,3 +139,45 @@ footer a {
   border: 1px solid #f2c085;
   resize: none;
 }
+
+#formulario .BOTAO {
+  width: 100px;
+  height: 30px;
+  color: white;
+  float: right;
+  font-size: 14px;
+  margin: 15px 0 20px 15px;
+}
+
+#formulario #ENVIAR {
+  background-color: darkgreen;
+  border: #11c839;
+  border-radius: 5px;
+}
+
+#formulario #LIMPAR {
+  background-color: darkred;
+  border: #d95f5f;
+  border-radius: 5px;
+}
+
+
+/* ##### página de obrigado ##### */
+
+#formulario h2 {
+  text-align: center;
+  color: #e28f2e;
+  margin: 40px 0;
+}
+
+
+/* ##### GALERIA ##### */
+
+figure .galeria {
+  padding-top: 100px;
+  text-align: center;
+}
+
+h2 #titulo {
+  color: white;
+}
