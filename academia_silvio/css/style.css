@@ -170,14 +170,19 @@ footer a {
   margin: 40px 0;
 }
 
-
 /* ##### GALERIA ##### */
 
-figure .galeria {
-  padding-top: 100px;
+figure.galeria {
+  padding: 20px;
   text-align: center;
 }
 
-h2 #titulo {
-  color: white;
+figure.galeria a img {
+  padding: 10px;
+}
+
+figure.galeria a img:hover {
+ box-shadow: 9px 7px 19px 5px rgba(0,0,0,0.1);
+ height: 151px;
+ width: 201px;
 }
