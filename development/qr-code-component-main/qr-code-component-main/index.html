@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | QR code component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+    main {
+      font-family: "Outfit", sans-serif;
+      width: 100vw; /* largura da viewport */
+      height: 100vh; /* altura da viewport */
+      max-width: 1440px; /* limite máximo */
+      margin: 0 auto;
+      background-color: hsl(212, 45%, 89%);
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    article {
+      width: 320px;
+      height: 499px;
+      background-color: hsl(0, 0%, 100%);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 20px;
+      
+    }
+
+    img {
+      height: 288px;
+      width: 288px;
+      border-radius: 10px;
+      margin-top: 16px;
+    }
+
+    div {
+      height: 131px;
+      width: 288px;
+      text-align: center;
+    }
+
+    h2 {
+      color: hsl(218, 44%, 22%);
+      padding-top: 0;
+    }
+
+    p {
+      color: hsl(216, 15%, 48%);
+      font-size: 15px;
+    }
+    
+    .attribution { 
+      font-size: 11px; 
+      text-align: center;
+      width: 1440px;
+      height: 40px;
+      background-color: hsl(212, 45%, 89%);
+      margin: 0 auto;
+    }
+
+    .attribution a { 
+      color: hsl(228, 45%, 44%); 
+    }
+
+    @media (max-width: 375px) {
+      main {
+        width: 375px;
+        height: 812px;
+      }
+
+      .attribution {
+        width: 375px;
+        height: 20px;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+
+  <main>
+    <article>
+      
+      <img src="images/image-qr-code.png" alt="QR Code">
+      
+      <div>
+        <h2>Improve your front-end skills by building projects</h2>
+        <p>Scan the QR code to visit Frontend <br> Mentor and take your coding skills to <br> the next level</p>
+      </div>
+    </article>
+
+
+  </main>
+
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">frontEndMentor</a>. 
+    Coded by <a href="#">Silvio Calixto</a>.
+  </div>
+</body>
+</html>
+
+
+
+1. Evite usar largura/altura fixas no main
+main {
+  width: 1440px;
+  height: 960px;
+}
+
+Isso força uma largura e altura fixa que não funcionam bem em telas menores (exceto você fez um media query para 375px, mas faltam outros tamanhos).
+
+Em vez disso, use:
+
+main {
+  width: 100vw; /* largura da viewport */
+  height: 100vh; /* altura da viewport */
+  max-width: 1440px; /* limite máximo */
+  margin: 0 auto;
+}
+
+Assim você garante que o container sempre ocupe a tela inteira e tenha limite máximo.
+
+2. Use max-width para imagens e containers em vez de largura fixa
+
+Na sua tag img e article, você pode fazer assim:
+
+article {
+  max-width: 320px;
+  width: 90%; /* fica responsivo */
+  ...
+}
+
+img {
+  max-width: 288px;
+  width: 100%;
+  height: auto; /* mantém proporção */
+}
+3. Melhore a responsividade com mais media queries (ou uso mobile-first)
+
+Hoje só tem uma media query para 375px. É legal incluir mais breakpoints, tipo:
+
+até 768px (tablet)
+
+até 1024px (laptop)
+
+Ou fazer o layout mobile-first e crescer para telas maiores.
+
+4. Separe o CSS em arquivo externo
+
+Por produtividade e organização, para projetos maiores, é melhor criar um arquivo .css externo e linkar no <head>, assim:
+
+<link rel="stylesheet" href="style.css">
+5. Simplifique a hierarquia HTML se possível
+
+Se o <div> dentro do <article> tem só texto, pode ser substituído por uma <section> ou <figcaption> (para melhorar semântica).
+
+6. Evite usar <br> para quebra de linha no parágrafo
+
+No seu <p>, o ideal é controlar o texto com CSS, não usar <br>:
+
+<p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+
+E no CSS, defina largura e text-align: center para ele quebrar naturalmente.
+
+7. Use variáveis CSS para cores (opcional, mas útil para produtividade)
+:root {
+  --blue-light: hsl(212, 45%, 89%);
+  --blue-dark: hsl(218, 44%, 22%);
+  --gray: hsl(216, 15%, 48%);
+  --accent: hsl(228, 45%, 44%);
+}
+
+body {
+  background-color: var(--blue-light);
+}
+
+h2 {
+  color: var(--blue-dark);
+}
+
+p {
+  color: var(--gray);
+}
+
+.attribution a {
+  color: var(--accent);
+}
+
+Facilita manutenção e troca de paleta.
+
+8. Use box-shadow para dar mais profundidade ao card
+
+Para ficar mais próximo do design original e com aspecto moderno:
+
+article {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+9. Código melhorado resumido (exemplo)
+main {
+  font-family: 'Outfit', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  max-width: 1440px;
+  background-color: var(--blue-light);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article {
+  max-width: 320px;
+  width: 90%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  color: var(--blue-dark);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+p {
+  color: var(--gray);
+  font-size: 15px;
+  line-height: 1.5;
+}
+Em resumo:
+
+Seu código está muito bom para começar, sem dúvida!
+
+As melhorias são para ajudar a ser mais flexível e escalável
+
+Mais responsividade e evitar fixar valores de largura e altura é fundamental
+
+Usar CSS externo e variáveis ajuda produtividade em projetos maiores
+
+Evite tags <br> para controlar quebra de linha — deixe o CSS fazer isso
+
+Se quiser, posso converter seu código atual em uma versão melhorada e mais produtiva, só pedir!
