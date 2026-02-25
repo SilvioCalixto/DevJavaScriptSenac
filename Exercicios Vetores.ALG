@@ -744,8 +744,9 @@ Inicio
    caso 36
    // Leia 10 notas e exiba a posição da nota mais próxima da média geral.
           cont <- 0
+          soma <- 0
           para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
+               escreva(i+1,"º Nota: ")
                leia(num[i])
                
                cont <- cont + num[i]
@@ -756,16 +757,43 @@ Inicio
           j <- 0
           
           para i de 0 ate 9 passo 1 faca
-               se maior - num[i]
-          escreval("")
 
+               se i = 0 entao
+                  soma <- maior - num[0]
+               fimSe
+               
+               se soma > num[i] então
+                  soma <- num[i]
+                  j <- i
+               fimSe
+          fimPara
+          
+          
+          escreval("")
+          
+          escreval("A nota:",num[j]," na ",j+1,"º posição, ficou mais próxima da média: ",maior)
+          escreval("")
    caso 37
    //Crie um vetor com os 10 primeiros números da sequência de Fibonacci.
         escreval("")
 
    caso 38
    //Leia um vetor de 10 posições e substitua todos os elementos repetidos por -1.
+        para i de 0 ate 9 passo 1 faca
+             escreva(i+1,"º Número: ")
+             leia(numero[i])
+        fimPara
         escreval("")
+        para i de 0 ate 9 passo 1 faca
+             para c de i+1 ate 9 passo 1 faca
+                  se numero[i] = numero[c] entao
+                     numero[c] <- -1
+                  fimSe
+             fimPara
+        fimPara
+        para i de 0 ate 9 passo 1 faca
+             escreval(numero[i])
+        fimPara
 
    caso 39
    //Preencha um vetor com 15 números inteiros e mostre quantos deles são pares consecutivos.
