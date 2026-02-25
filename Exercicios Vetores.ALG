@@ -16,8 +16,9 @@ Var
   nomes:vetor[0..9] de caracter
   num:vetor[0..9] de real
   number:vetor[0..14] de real
+  numbers:vetor[0..14] de real
   
-  opcao,i,c,aux,j,contador,negativo,positivo,nulo:inteiro
+  opcao,i,c,aux,j,contador,negativo,positivo,nulo,f1,f2,f3:inteiro
   soma,cont,maior,menor:real
   flag:logico
   palavra,senha,letra:caracter
@@ -775,32 +776,80 @@ Inicio
           escreval("")
    caso 37
    //Crie um vetor com os 10 primeiros números da sequência de Fibonacci.
-        escreval("")
+          f1 <- 0
+          f2 <- 1
+          f3 <- 0
+
+          para i de 0 ate 9 passo 1 faca
+              numero[i] <- f1
+              f3 <- f1 + f2
+              f1 <- f2
+              f2 <- f3
+
+          fimPara
+          para i de 0 ate 9 passo 1 faca
+              escreval(numero[i])
+
+          fimPara
+
+          escreval("")
 
    caso 38
    //Leia um vetor de 10 posições e substitua todos os elementos repetidos por -1.
-        para i de 0 ate 9 passo 1 faca
+          para i de 0 ate 9 passo 1 faca
              escreva(i+1,"º Número: ")
              leia(numero[i])
-        fimPara
-        escreval("")
-        para i de 0 ate 9 passo 1 faca
+          fimPara
+          escreval("")
+          para i de 0 ate 9 passo 1 faca
              para c de i+1 ate 9 passo 1 faca
                   se numero[i] = numero[c] entao
                      numero[c] <- -1
                   fimSe
              fimPara
-        fimPara
-        para i de 0 ate 9 passo 1 faca
-             escreval(numero[i])
-        fimPara
+          fimPara
+          para i de 0 ate 9 passo 1 faca
+               escreval(numero[i])
+          fimPara
 
    caso 39
    //Preencha um vetor com 15 números inteiros e mostre quantos deles são pares consecutivos.
-        escreval("")
+          para i de 0 ate 14 passo 1 faca
+               numbers[i] <- i
+          fimPara
+          escreval("")
+          
+          para i de 0 ate 14 passo 1 faca
+          
+               se numbers[i] % 2 = 0 entao
+                  escreval(numbers[i]," É um número par")
+               fimSe
+               
+          fimPara
+          escreval("")
    caso 40
    //Leia 10 números e exiba o segundo maior valor do vetor.
-        escreval("")
+          f1 <- 0
+          f2 <- 0
+          
+          para i de 0 ate 9 passo 1 faca
+              escreva(i+1,"º Número: ")
+              leia(numero[i])
+              
+              se i = 0 entao
+                 f1 <- numero[i]
+                 f2 <- numero[i]
+              fimSe
+              
+              se numero[i] >  f1 entao
+                 f2 <- f1
+                 f1 <- numero[i]
+              fimSe
+          fimPara
+          
+          escreval(f1," é o maior valor e o segundo maior é ",f2)
+   
+          escreval("")
 
 
    outroCaso
