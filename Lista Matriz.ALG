@@ -20,8 +20,9 @@ Var
   j,aux,p:real
   flag:logico
 Inicio
-aleatorio on
+
 // Lista Exercícios de Matriz
+
    repita
      escreval("###          Escolha uma das opções abaixo:       ####")
      escreval("## 1º Exercício   ##6º Exercício  ##  11º Exercício ##")
@@ -392,6 +393,24 @@ aleatorio on
 
    caso 16
    //Crie uma matriz identidade 4x4.
+          para i de 0 ate 3 passo 1 faca
+               para c de 0 ate 3 passo 1 faca
+                    se i = c entao
+                       media[i,c] <- 1
+                    senao
+                         media[i,c] <- 0
+                    fimSe
+               fimPara
+          fimPara
+          escreval("")
+          
+          para i de 0 ate 3 passo 1 faca
+               para c de 0 ate 3 passo 1 faca
+                    escreva(media[i,c]," ")
+               fimPara
+               escreval("")
+          fimPara
+          
           escreval("")
 
    caso 17
@@ -435,22 +454,35 @@ aleatorio on
           
    caso 19
    //Leia uma matriz 5x5 e exiba os elementos da borda.
-
-   
-
+          para i de 0 ate 4 passo 1 faca
+               para c de 0 ate 4 passo 1 faca
+                    escreva(i,c,": ")
+                    leia(matrix[i,c])
+               fimPara
+          fimPara
+          para i de 0 ate 4 passo 1 faca
+               para c de 0 ate 4 passo 1 faca
+                    se (i = 0) ou (c = 0) ou (i = 4) ou (c = 4) entao
+                       escreva(matrix[i,c]," ")
+                    fimSe
+               fimPara
+               escreval("")
+          fimPara
           escreval("")
 
    caso 20
    //Gere uma matriz 3x3 com números aleatórios de 1 a 100 e exiba-a formatada.
-          para i de 0 ate 99 passo 1 faca
-               para c de 0 ate 99 passo 1 faca
+          aleatorio on
+
+          para i de 0 ate 3 passo 1 faca
+               para c de 0 ate 3 passo 1 faca
                     tabuada[i,c] <- aleatorio(1,100)
                fimPara
           fimPara
           escreval("")
           
-          para i de 0 ate 99 passo 1 faca
-               para c de 0 ate 99 passo 1 faca
+          para i de 0 ate 3 passo 1 faca
+               para c de 0 ate 3 passo 1 faca
                     escreval(tabuada[i,c]," ")
                fimPara
                escreval("")
