@@ -5,18 +5,22 @@ Algoritmo "Estruturas Condicionais e de Repetição "
 // Autor(a)    : Silvio Calixto
 // Data atual  : 11/02/2026
 Var
+  tabuada:vetor[0..99,0..99] de inteiro
   numeros:vetor[0..2,0..2] de inteiro
   numero:vetor[0..2,0..2] de inteiro
   soma:vetor[0..2,0..2] de inteiro
   media:vetor[0..3,0..3] de inteiro
+  matrix:vetor[0..4,0..4] de real
   multi:vetor[0..1,0..1] de real
   mult:vetor[0..1,0..1] de real
   multiplica:vetor[0..1,0..1] de real
 
 
   opcao,i,c:inteiro
-  j,aux:real
+  j,aux,p:real
+  flag:logico
 Inicio
+aleatorio on
 // Lista Exercícios de Matriz
    repita
      escreval("###          Escolha uma das opções abaixo:       ####")
@@ -222,20 +226,52 @@ Inicio
 
    caso 9
    //Leia uma matriz 5x5 e troque a primeira linha com a última.
+          aux <- 0
           para i de 0 ate 4 passo 1 faca
                para c de 0 ate 4 passo 1 faca
                     escreva(i,c,": ")
-                    leia
-
+                    leia(matrix[i,c])
+               fimPara
+          fimPara
+          escreval("")
+          
+          para c de 0 ate 4 passo 1 faca
+               aux <- matrix[0,c]
+               matrix[0,c] <- matrix[4,c]
+               matrix[4,c] <- aux
+          fimPara
+          
+          para i de 0 ate 4 passo 1 faca
+               para c de 0 ate 4 passo 1 faca
+                    escreva(matrix[i,c], " ")
+               fimPara
+          escreval("")
+          fimPara
           escreval("")
         
    caso 10
    //Leia uma matriz 3x3 e exiba a matriz transposta.
+          para i de 0 ate 2 passo 1 faca
+               para c de 0 ate 2 passo 1 faca
+                    escreva(i+1,"º Linha da ",c+1,"º Coluna: ")
+                    leia(numeros[i,c])
+               fimPara
+          fimPara
+
+          para i de 0 ate 2 passo 1 faca
+               para c de 0 ate 2 passo 1 faca
+                    escreva(numeros[c,i]," ")
+               fimPara
           escreval("")
+          fimPara
+
+          escreval("")
+
 
    caso 11
    //Encontre o maior valor da matriz e sua posição.
           j <- 0
+          aux <- 0
           para i de 0 ate 2 passo 1 faca
                para c de 0 ate 2 passo 1 faca
                     escreva(i+1,"º Linha da ",c+1,"º Coluna: ")
@@ -245,7 +281,9 @@ Inicio
                     fimSe
                     se numeros[i,c] > j entao
                        j <- numeros[i,c]
-                    fimPara
+                       aux <-  i
+                       p <- c
+                    fimSe
                fimPara
           fimPara
 
@@ -258,24 +296,98 @@ Inicio
           escreval("")
           fimPara
 
-          escreval("O maior valor é ",j)
+          escreval("O maior valor é ",j,", na posição: ",aux,".",p)
 
-          escreval("")
           escreval("")
 
    caso 12
    //Conte quantos valores pares existem em uma matriz 4x4.
+          flag <- falso
+          aux <- 0
+          para i de 0 ate 3 passo 1 faca
+               para c de 0 ate 3 passo 1 faca
+                    escreva(i,c,": ")
+                    leia(media[i,c])
+                    se media[i,c] % 2 = 0 entao
+                       aux <- aux + 1
+                       flag <- verdadeiro
+                    fimSe
+               fimPara
+          fimPara
+          
+          escreval("")
+          
+          para i de 0 ate 3 passo 1 faca
+               para c de 0 ate 3 passo 1 faca
+                    escreva(media[i,c]," ")
+               fimPara
+          escreval("")
+          fimPara
+          
+          se flag = verdadeiro entao
+             escreval(aux," números são pares")
+          senao
+               escreval("Não existe número par na Matriz.")
+          fimSe
           escreval("")
    caso 13
    //Preencha uma matriz 10x10 com a tabuada de 1 a 10.
+          para i de 0 ate 9 passo 1 faca
+               para c de 0 ate 9 passo 1 faca
+                    tabuada[i,c] <- (i+1) * (c+1)
+               fimPara
+          fimPara
+          
+          para i de 0 ate 9 passo 1 faca
+               para c de 0 ate 9 passo 1 faca
+                    escreva(tabuada[i,c]," ")
+               fimPara
+          escreval("")
+          fimPara
           escreval("")
           
    caso 14
    //Leia uma matriz 3x3 e exiba apenas os elementos acima da média.
+          j <- 0
+          para i de 0 ate 2 passo 1 faca
+               para c de 0 ate 2 passo 1 faca
+                    escreva(i+1,"º Linha da ",c+1,"º Coluna: ")
+                    leia(media[i,c])
+                    j <- j + media[i,c]
+               fimPara
+          fimPara
+          aux <- j / 9
+          
+          escreval("Média: ",aux)
+          para i de 0 ate 2 passo 1 faca
+               para c de 0 ate 2 passo 1 faca
+                    se media[i,c] > aux entao
+                       escreva(media[i,c]," ")
+                    fimSe
+               fimPara
+               escreval("")
+          fimPara
+
           escreval("")
 
    caso 15
    //Substitua os elementos negativos de uma matriz por 0.
+          para i de 0 ate 2 passo 1 faca
+               para c de 0 ate 2 passo 1 faca
+                    escreva(i,c,": ")
+                    leia(numero[i,c])
+                    se numero[i,c] < 0 entao
+                       numero[i,c] <- 0
+                    fimSe
+               fimPara
+          fimPara
+
+          para i de 0 ate 2 passo 1 faca
+               para c de 0 ate 2 passo 1 faca
+                    escreva(numero[i,c]," ")
+               fimPara
+          escreval("")
+          fimPara
           escreval("")
 
    caso 16
@@ -284,21 +396,66 @@ Inicio
 
    caso 17
    //Calcule a soma de cada linha de uma matriz 3x3.
+          para i de 0 ate 2 passo 1 faca
+               para c de 0 ate 2 passo 1 faca
+                    escreva(i,c,": ")
+                    leia(numero[i,c])
+               fimPara
+          fimPara
+          aux <- 0
+          para i de 0 ate 2 passo 1 faca
+               aux <- 0
+               para c de 0 ate 2 passo 1 faca
+                    aux <- aux + numero[i,c]
+               fimPara
+
+               escreval("Soma da linha ", i, ": ", aux)
+          fimPara
           escreval("")
+
           
    caso 18
    //Calcule a soma de cada coluna de uma matriz 3x3.
+          para i de 0 ate 2 passo 1 faca
+               para c de 0 ate 2 passo 1 faca
+                    escreva(i,c,": ")
+                    leia(numero[i,c])
+               fimPara
+          fimPara
+          aux <- 0
+          para c de 0 ate 2 passo 1 faca
+               aux <- 0
+               para i de 0 ate 2 passo 1 faca
+                    aux <- aux + numero[i,c]
+               fimPara
+
+               escreval("Soma da linha ", c, ": ", aux)
+          fimPara
           escreval("")
           
    caso 19
    //Leia uma matriz 5x5 e exiba os elementos da borda.
+
+   
+
           escreval("")
 
    caso 20
    //Gere uma matriz 3x3 com números aleatórios de 1 a 100 e exiba-a formatada.
-
+          para i de 0 ate 99 passo 1 faca
+               para c de 0 ate 99 passo 1 faca
+                    tabuada[i,c] <- aleatorio(1,100)
+               fimPara
+          fimPara
           escreval("")
-
+          
+          para i de 0 ate 99 passo 1 faca
+               para c de 0 ate 99 passo 1 faca
+                    escreval(tabuada[i,c]," ")
+               fimPara
+               escreval("")
+          fimPara
+          escreval("")
 
    outroCaso
             escreval("Digite uma opção válida")
@@ -307,3 +464,4 @@ Inicio
 
 
 Fimalgoritmo
+
