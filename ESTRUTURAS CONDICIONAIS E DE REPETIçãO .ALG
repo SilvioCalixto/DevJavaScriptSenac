@@ -6,18 +6,12 @@ Algoritmo "Estruturas Condicionais e de Repetição "
 // Data atual  : 11/02/2026
 Var
 // Seção de Declarações das variáveis 
-  numero:vetor[0..9] de inteiro
   numeros:vetor[0..99] de inteiro
-  par:vetor[0..9] de inteiro
-  impar:vetor[0..9] de inteiro
-  
-  nome:vetor[0..9] de caracter
-  num:vetor[0..9] de real
   
   opcao,i,c,aux,j,contador:inteiro
   soma,cont:real
   flag:logico
-  palavra,senha,letra:caracter
+
   
 
 Inicio
@@ -50,478 +44,217 @@ Inicio
           escreval("Obrigado!")
 
    caso 1
-   //Leia 10 números e armazene em um vetor.
+   //Leia dois números e exiba o maior deles.
    
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(numero[i])
-          fimPara
-          escreval("")
-
-   caso 2
-   //Leia 10 números e exiba-os na ordem inversa.
-
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(numero[i])
-          fimPara
+          escreval("Primeiro Número: ")
+          leia(i)
+          escreval("Segundo Número: ")
+          leia(c)
           
-          para i de 9 ate 0 passo -1 faca
-               escreval(numero[i])
-          fimPara
-          escreval("")
-
-   caso 3
-   //Leia 10 números e exiba apenas os pares.
-
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(numero[i])
-          fimPara
-          flag <- falso
-          para i de 0 ate 9 passo 1 faca
-               se numero[i] % 2 = 0 entao
-                  flag <- positivo
-               fimSe
-          fimPara
-          
-          se flag = verdadeiro entao
-             escreval(numero[i])
+          se i > c entao
+             escreval(i," é o maior")
           senao
-             escreval("Não tem número par")
+               escreval(c," é o maior")
           fimSe
 
+          escreval("")
+   caso 2
+   //Crie uma matriz identidade 4x4.
 
+          para i de 0 ate 3 passo 1 faca
+               para c de 0 ate 3 passo 1 faca
+                    se i = c entao
+                       numeros[i,c] <- 1]
+                    senao
+                         numeros[i,c] <- 0
+                    fimSe
+               fimPara
+          fimPara
+          
+          para i de 0 ate 3 passo 1 faca
+               para c de 0 ate 3 passo 1 faca
+                    escreval(numeros[i,c," "])
+               fimPara
+               escreval("")
+          fimPara
+
+
+          escreval("")
+   caso 3
+   //Imprima os números de 1 a 100 com para.
           escreval("")
 
    caso 4
-   //Leia 10 números e exiba a média.
-
-          soma <- 0
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(numero[i])
-               soma <- soma + numero[i]
-          fimPara
-          
-          escreval("A média é ", soma / 10)
-
+   //Leia 10 números inteiros e armazene em um vetor. Mostre os pares
           escreval("")
 
    caso 5
-   //Leia 10 nomes e exiba os que começam com “A”.
-
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Nome: ")
-               leia(nome[i])
-          fimPara
-          escreval("")
-          para i de 0 ate 9 passo 1 faca
-               se (pos("A", nome[i]) = 1) ou (pos("a", nome[i]) = 1) entao
-                  escreval(nome[i])
-               fimSe
-          fimPara
-
+   //Verifique se um número é múltiplo de 3 e de 5 ao mesmo tempo.
           escreval("")
 
    caso 6
-   // Leia 10 números e conte quantos são maiores que a média.
-   
-          soma <- 0
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(numero[i])
-               soma <- soma + numero[i]
-          fimPara
-          
-          escreval("")
-          
-          para i de 0 ate 9 passo 1 faca
-               se numero[i] > (soma / 10) entao
-                  escreval(numero[i])
-                  cont <- cont + 1
-               fimSe
-          fimPara
-          escreval("")
-          escreval(cont," números são maiores que a média: ",soma / 10)
+   //Leia três valores e verifique se formam um triângulo. Classifique como equilátero, isósceles ou escaleno
           escreval("")
           
    caso 7
-   //Leia 10 idades e exiba a maior.
-   
-          cont <- 0
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(numero[i])
-               
-               se i = 0 entao
-                  cont <- numero[i]
-               fimSe
-               
-               se numero[i] > cont entao
-                  cont <- numero[i]
-               fimSe
-          fimPara
-          
-          escreval("")
-          escreval("Maior idade é ",cont)
-          
+   //Leia uma matriz 3x3 e imprima sua diagonal principal.
+
           escreval("")
 
    caso 8
-   //Leia 10 alturas e exiba a média.
-   
-          soma <- 0
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(num[i])
-               soma <- soma + num[i]
-          fimPara
-
-          escreval("A média é ", soma / 10)
-
+   //Leia idades com enquanto até uma idade negativa ser digitada. Mostre a média.
           escreval("")
 
    caso 9
-   // Leia 10 salários e exiba quantos ganham abaixo de R$ 1.200.
-
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Salário: ")
-               leia(num[i])
-          fimPara
-
-          escreval("")
-          
-          para i de 0 ate 9 passo 1 faca
-          
-               se num[i] < 1200 entao
-               escreval(num[i])
-               fimSe
-
-          fimPara
-          
+   //Leia 10 valores e calcule a média. Mostre os que estão acima dela.
           escreval("")
         
    caso 10
-   //Leia 10 números e exiba quantos são múltiplos de 5.
-
-          cont <- 0
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(numero[i])
+   //Leia uma matriz 4x4 e exiba a maior linha (com maior soma).
+   
+          para i de 0 ate 3 passo 1 faca
+               para c de 0 ate 3 passo 1 faca
+                    escreva(i,c": ")
+                    leia(numeros[i,c]
+               fimPara
           fimPara
-
-          escreval("")
-
-          para i de 0 ate 9 passo 1 faca
-
-               se numero[i] % 5 = 0 entao
-               escreval(numero[i])
-               cont <- cont + 1
-               fimSe
-
-          fimPara
-
-          escreval(cont," são multiplos de 5.")
           escreval("")
 
    caso 11
-   //Leia 10 valores e os armazene em dois vetores (pares e ímpares).
-
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(numero[i])
-               
-               se numero[i] % 2 = 0 entao
-                  par[i] <- numero[i]
-               senao
-                    impar[i] <- numero[i]
-               fimSe
-          fimPara
-          
-          escreval("Números pares")
-          para i de 0 ate 9 passo 1 faca
-               se par[i] <> 0 entao
-                  escreval(par[i])
-               fimSe
-          fimPara
-          
-          escreval("Números Ímpares")
-          para i de 0 ate 9 passo 1 faca
-               se impar[i] <> 0 entao
-                  escreval(impar[i])
-               fimSe
-          fimPara
-          
+   //Calcule o fatorial de um número com enquanto.
           escreval("")
 
    caso 12
-   // Leia 10 valores e ordene do maior para o menor.
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(numero[i])
-          fimPara
-          aux <- 0
-          para i de 1 ate 9 passo 1 faca
-               para c de i+1 ate 9 passo 1 faca
-               se numero[i] < numero[c] entao
-               aux <- numero[c]
-               numero[c] <- numero[i]
-               numero[i] <- aux
-               fimSe
-               fimPara
-          fimPara
-          para i de 0 ate 9 passo 1 faca
-               escreval(numero[i])
-
-          fimPara
+   //Receba um número de 1 a 7 e mostre o dia da semana correspondente (use escolha/caso).
           escreval("")
 
    caso 13
-   // Leia 10 números e exiba os repetidos.
-
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(numero[i])
-          fimPara
-
-          para i de 0 ate 9 passo 1 faca
-
-               para c de i+1 ate 9 passo 1 faca
-                       se numero[i] = numero[c] entao
-                          escreval(numero[c])
-                       fimSe
-               fimPara
-
-          fimPara
+   //Leia o código de um produto (1 a 5) e mostre seu nome e preço.
 
           escreval("")
           
    caso 14
-   //Some dois vetores de 10 posições.
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(par[i])
-          fimPara
-          escreval("")
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(impar[i])
-               
-               numero[i] <- par[i] + impar[i]
-          fimPara
-          escreval("")
-          para i de 0 ate 9 passo 1 faca
-               escreva(numero[i])
-          fimPara
-          
+   //Crie dois vetores de 10 posições e preencha um com a soma e outro com a multiplicação entre eles.
+
           escreval("")
 
    caso 15
-   //Multiplique dois vetores de 10 posições e armazene em outro.
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(par[i])
-          fimPara
-          escreval("")
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(impar[i])
+   //Calcule a soma dos números de 1 a N com enquanto.
 
-               numero[i] <- par[i] * impar[i]
-          fimPara
-          escreval("")
-          para i de 0 ate 9 passo 1 faca
-               escreva(numero[i])
-          fimPara
           escreval("")
 
    caso 16
-   //Calcule a soma de todos os elementos de um vetor.
-          soma <- 0
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(numero[i])
-               soma <- soma + numero[i]
-          fimPara
-
-          escreva(soma)
+   //Preencha uma matriz 5x5 com números aleatórios de 1 a 100.
           escreval("")
 
    caso 17
-   //Encontre o maior número em um vetor e sua posição.
-          aux <- 0
-          c <- 0
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Número: ")
-               leia(numero[i])
-               se i = 0 entao
-                  aux <- numero[i]
-               fimSe
-               
-               se  numero[i] > aux entao
-                   aux <- numero[i]
-                   c <- i
-               fimSe
-          fimPara
-          escreval("")
-          escreva(aux," é o maior número e sua posição é",c)
-          
-          
+   //Leia uma matriz 4x4 e some todos os valores
           escreval("")
 
    caso 18
-   //Leia nomes e notas e exiba os alunos com nota acima de 7.
-
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1,"º Nome: ")
-               leia(nome[i])
-               escreva(i+1,"º Nota: ")
-               leia(numero[i])
-          fimPara
-          
-          escreval("")
-          
-          para i de 0 ate 9 passo 1 faca
-               se numero[i] > 7 entao
-                  escreval("Aluno: ",nome[i],"- Nota: ",numero[i])
-               fimSe
-
+   //Leia o número de horas trabalhadas e o valor da hora. Calcule o salário e adicione 50% se ultrapassar 40h.
           fimPara
 
    caso 19
-   //Crie um vetor com os 100 primeiros números pares.
-          aux <- 0
-          para i de 0 ate 99 passo 1 faca
-               numeros[i] <- aux
-               aux <- aux + 2
-               escreval(numeros[i])
-          fimPara
+   //Leia uma matriz 3x3 e imprima os valores acima da média geral.
+
           escreval("")
 
    caso 20
-   //Leia uma palavra e inverta a ordem das letras.
-
-          escreval("Digite uma palavra: ")
-          leia(palavra)
-          
-          c <- compr(palavra)
-          senha <- ""
-          letra <- ""
-          para i de c ate  1 passo -1 faca
-               letra <- copia(palavra, i, 1)
-               senha <- senha + letra
-          fimPara
-          
-          escreval(senha)
-          
-
+   //Calcule a média de três notas e diga se o aluno foi aprovado (média = 7).
           escreval("")
 
    caso 21
-   //Leia 10 números inteiros e armazene apenas os números primos em um segundo vetor.
-          c <- 0
-
-          para i de 0 ate 9 passo 1 faca
-               escreva(i+1, "º Número: ")
-               leia(numero[i])
-
-               contador <- 0
-
-               para j de 1 ate numero[i] passo 1 faca
-                    se numero[i] % j = 0 então
-                       contador <- contador + 1
-                    fimSe
-               fimPara
-
-          se contador = 2 então
-             par[c] <- numero[i]
-             c <- c + 1
-          fimSe
-
-          fimPara
-
-          para i de 0 ate c - 1 passo 1 faca
-               escreval(par[i])
-          fimPara
+   //Conte quantos valores pares existem em uma matriz 3x3.
           escreval("")
 
    caso 22
-   //Leia 10 números reais e exiba a quantidade de números negativos, positivos e nulos.
-        escreval("")
+   //Imprima os 15 primeiros termos da sequência de Fibonacci com para.
+
+          escreval("")
 
    caso 23
-   //Leia 10 nomes e permita ao usuário buscar um nome específico, indicando se foi encontrado.
-        escreval("")
+   //Leia 15 números e mostre quantos são negativos
+   
+          escreval("")
 
    caso 24
-   // Leia 10 números e calcule a diferença entre o maior e o menor número do vetor.
-        escreval("")
+   //Calcule o IMC e classifique de acordo com a faixa de valores.
+
+          escreval("")
 
    caso 25
-   //Leia um vetor de 10 elementos e rotacione todos os valores uma posição para baixo.
-        escreval("")
+   //Mostre os múltiplos de 4 entre 1 e 50 com para.
+
+          escreval("")
 
    caso 26
-   //Leia 10 números e armazene em um segundo vetor apenas os que forem múltiplos de 3 ou 7.
+   //Leia uma matriz 3x3 e exiba a soma dos elementos da diagonal secundária.
 
-        escreval("")
+          escreval("")
 
    caso 27
-   //Crie um vetor de 10 posições e substitua todos os valores ímpares por zero.
-        escreval("")
+   //Leia 10 nomes e exiba quantos começam com vogais.
+
+
+          escreval("")
 
    caso 28
-   //Preencha um vetor de 20 posições com os números de 1 a 20 e os escreva em ordem decrescente.
-        escreval("")
+   //Solicite senha até que o usuário digite a correta (1234) com repita.
+
+          escreval("")
 
    caso 29
-   //Leia 10 números e mostre os valores que aparecem exatamente uma vez (sem repetição).
-        escreval("")
+   //Leia 10 números e conte quantas vezes o número 7 aparece.
+
+          escreval("")
    caso 30
-   //Leia 10 números e mostre quantos deles são divisíveis simultaneamente por 2 e 4.
-        escreval("")
+   //Leia três notas e converta para conceito: A (=9), B (=7), C (=5), D (=3), E (<3).
+
+          escreval("")
 
    caso 31
-   //Leia 10 nomes e mostre quais têm mais de 5 caracteres.
-        escreval("")
+   //Leia uma altura e um peso, e calcule o IMC, classificando o resultado.
+
+          escreval("")
 
    caso 32
-   //Leia 10 valores e calcule o produto de todos os elementos do vetor.
+   //Leia um vetor com os quadrados dos números de 1 a 10.
 
-        escreval("")
+          escreval("")
 
    caso 33
-   //Preencha um vetor com os quadrados dos números de 1 a 15.
-        escreval("")
+   //Calcule a diferença entre o maior e o menor número de um vetor de 8 elementos.
+
+          escreval("")
 
    caso 34
-   // Preencha dois vetores com 10 elementos cada e crie um terceiro vetor com a subtração dos dois.
-        escreval("")
+   //Leia números com repita até que o usuário digite zero. Mostre a soma.
+          escreval("")
 
    caso 35
-   //Leia um vetor de 10 números e remova (ignore) todos os números negativos.
-        escreval("")
+   //Leia 10 números e armazene apenas os que forem múltiplos de 5.
+          escreval("")
 
    caso 36
-   // Leia 10 notas e exiba a posição da nota mais próxima da média geral.
+   //Leia um valor entre 1 e 10 e exiba sua tabuada com para.
 
-        escreval("")
+          escreval("")
 
    caso 37
-   //Crie um vetor com os 10 primeiros números da sequência de Fibonacci.
-        escreval("")
+   //Preencha um vetor com os 20 primeiros múltiplos de 5.
+          escreval("")
 
    caso 38
-   //Leia um vetor de 10 posições e substitua todos os elementos repetidos por -1.
-        escreval("")
+   //Leia duas matrizes 3x3 e crie uma terceira com a soma delas.
+          escreval("")
 
    caso 39
-   //Preencha um vetor com 15 números inteiros e mostre quantos deles são pares consecutivos.
-        escreval("")
+   //Leia 8 números e exiba o maior valor e sua posição.
+          escreval("")
    caso 40
-   //Leia 10 números e exiba o segundo maior valor do vetor.
-        escreval("")
+   //Leia um número de 1 a 7 e mostre o nome do dia da semana correspondente
+          escreval("")
 
 
    outroCaso
