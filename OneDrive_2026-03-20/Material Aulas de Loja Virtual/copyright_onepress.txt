@@ -1,0 +1,7 @@
+.site-footer .site-info {
+	display: none;
+}
+
+.site-footer .footer-connect {
+	padding: 10px;
+}
